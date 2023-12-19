@@ -92,6 +92,8 @@ const (
 	// Diamond writes the prompt shaped with a leading and trailing symbol
 	Diamond SegmentStyle = "diamond"
 
+	// GODOT writes the folders Godot Engine version
+	GODOT SegmentType = "godot"
 	// ANGULAR writes which angular cli version us currently active
 	ANGULAR SegmentType = "angular"
 	// ARGOCD writes the current argocd context
@@ -292,6 +294,7 @@ var Segments = map[SegmentType]func() SegmentWriter{
 	GCP:             func() SegmentWriter { return &segments.Gcp{} },
 	GIT:             func() SegmentWriter { return &segments.Git{} },
 	GITVERSION:      func() SegmentWriter { return &segments.GitVersion{} },
+	GODOT:           func() SegmentWriter { return &segments.Godot{} },
 	GOLANG:          func() SegmentWriter { return &segments.Golang{} },
 	HASKELL:         func() SegmentWriter { return &segments.Haskell{} },
 	HELM:            func() SegmentWriter { return &segments.Helm{} },
